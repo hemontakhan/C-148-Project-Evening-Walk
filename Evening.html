@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src='https://aframe.io/releases/1.0.4/aframe.min.js'></script>
+</head>
+<body>
+ <a-scene style='background-color: black;'>
+  <a-camera position='0 3 12'></a-camera>
+
+  <a-plane position='0 0 -8' width='30' height='22' src='assets/night.png'></a-plane>
+  <a-box rotation='90 0 0' position='0 -5 -5' width='30' height='10' shadow='recieve:true' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkcMKG0hUKQiJ-vtLwiNdXKMPzvcdAGGzxtSJWAslMM9hAhZfrfhZW_rCcnSD24IPPWE0&usqp=CAU'></a-box>
+    <a-entity position='0 6 -5' light='type:ambient'>
+   </a-entity> 
+
+ <!--Management of models for couple,dog,bench and lamp--->
+ <a-assets timeout='10000'>
+  <a-asset-item id='bench' src='./bench/scene.gltf'></a-asset-item>
+  <a-asset-item id='dog' src='./shiba/scene.gltf'></a-asset-item>
+  <a-asset-item id='couple' src='./fitg003a_stephanie_couple_new/scene.gltf'></a-asset-item>
+  <a-asset-item id='Lamppost' src='./lamppost/scene.gltf'></a-asset-item>
+ </a-assets>
+
+ <a-entity>
+ <a-entity position='3 -4 -6' scale='0.5 0.5 0.5' rotation='0 -90 0' gltf-model='#bench' shadow='castShadow:true'></a-entity>
+ <a-entity position='5 -3 -2' scale='1.5 1.5 1.5' rotation='0 20 0' gltf-model='#dog' shadow='castShadow:true'></a-entity>
+ <a-entity position='-6 -1 -5' scale='0.8 0.8 0.8' rotation='0 0 0' gltf-model='#couple' shadow='castShadow:true'></a-entity>
+ <a-entity position='-5 -4.7 -5.5' scale='3 3 3' gltf-model='#Lamppost'></a-entity>
+ <a-sphere position='-11 6.7 -5.5' radius='0.3' color='yellow'></a-sphere>
+ <a-entity position='-11 6.7 -5.5' light='type:directional;intensity:1;castShadow:true;color:brown' ></a-entity>
+ </a-entity>
+</a-scene>
+</body>
+</html>
